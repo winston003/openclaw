@@ -1,0 +1,36 @@
+{
+  "id": "web-content-fetcher",
+  "name": "Web Content Fetcher",
+  "version": "1.0.0",
+  "description": "Fetch and extract readable content from any URL",
+  "author": "OpenClaw",
+  "homepage": "https://docs.openclaw.ai/tools/web",
+  "keywords": ["web", "fetch", "scrape", "content", "markdown", "html"],
+  "tools": [
+    {
+      "name": "web_fetch",
+      "description": "Fetch a URL and extract readable content",
+      "parameters": {
+        "type": "object",
+        "required": ["url"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL to fetch (http/https only)"
+          },
+          "extractMode": {
+            "type": "string",
+            "enum": ["markdown", "text"],
+            "description": "Extraction mode (default: markdown)",
+            "default": "markdown"
+          },
+          "maxChars": {
+            "type": "number",
+            "description": "Maximum characters to return (default: 50000)",
+            "default": 50000
+          }
+        }
+      }
+    }
+  ]
+}
